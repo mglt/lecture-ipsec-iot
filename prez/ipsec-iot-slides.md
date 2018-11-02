@@ -197,7 +197,7 @@ A mote with unidirectional communication to a local destination:
 
 IP/ESP/Data provides smaller payload over IP/UDP/DTLS/{HTTP, CoAP/OSCORE}
 
-<img src="/home/emigdan/gitlab/ipsec-iot-lecture/fig/use_case_e2e-unidirectional.png" height="200">
+<img src="https://github.com/mglt/lecture-ipsec-iot/blob/master/fig/use_case_e2e-unidirectional.png" height="200">
 
 ---
 
@@ -208,7 +208,7 @@ Basic interactions and birectional communication may include:
 * Communication using a control channel - eventually multicast 
 * Basic device-to-device communications (Ping - like) 
 
-<img src="/home/emigdan/gitlab/ipsec-iot-lecture/fig/use_case_e2e-bidirectional.png" height="200">
+<img src="https://github.com/mglt/lecture-ipsec-iot/blob/master/fig/use_case_e2e-bidirectional.png" height="200">
 
 ---
 
@@ -246,7 +246,7 @@ Note: IPv6 provides lots of IP addresses
 
 # Use Cases - Security Domain
 
-<img src="/home/emigdan/gitlab/ipsec-iot-lecture/fig/secure-domain-architecture-ipsec.svg" height="500">
+<img src="https://github.com/mglt/lecture-ipsec-iot/blob/master/fig/secure-domain-architecture-ipsec.svg" height="500">
 
 
 ---
@@ -1115,14 +1115,14 @@ Diet-ESP cuts the bill:
 # EHC Strategy: Diet-ESP - Performance
 
 
-<img src="/home/emigdan/gitlab/ipsec-iot-lecture/fig/results_energy_vs_payload.png  " height="500">
+<img src="https://github.com/mglt/lecture-ipsec-iot/blob/master/fig/results_energy_vs_payload.png  " height="500">
 
 
 ---
 # EHC Strategy: Diet-ESP - Performance
 
 
-<img src="/home/emigdan/gitlab/ipsec-iot-lecture/fig/results_energy_vs_payload_relative.png" height="500">
+<img src="https://github.com/mglt/lecture-ipsec-iot/blob/master/fig/results_energy_vs_payload_relative.png" height="500">
 
 ---
 # EHC Strategy: Diet-ESP - IKEv2 

@@ -197,7 +197,7 @@ A mote with unidirectional communication to a local destination:
 
 IP/ESP/Data provides smaller payload over IP/UDP/DTLS/{HTTP, CoAP/OSCORE}
 
-<img src="https://github.com/mglt/lecture-ipsec-iot/blob/master/fig/use_case_e2e-unidirectional.png" height="200">
+<img src="https://github.com/mglt/lecture-ipsec-iot/raw/master/fig/use_case_e2e-unidirectional.png" height="200">
 
 ---
 

@@ -5,24 +5,24 @@
 # IoT Security
 
 There is no ONE IoT main use case:
-* Wide range of environements car, home, outdoor
+* Wide range of environments car, home, outdoor
 * Wide range of devices type devices
 * Wide range of ways of management: application, devices,...
 
-IPsec can be used to secure your IoT environement:
+IPsec can be used to secure your IoT environment:
 * This is NOT the only way to secure your IoT environment
-* How to secure your IoT environement is not always trivial
+* How to secure your IoT environment is not always trivial
 ---
 # IoT Security - Security Protocols
 
 At least the following security protocols should be considered:
-* Constrained Object Security (COSE), JSON Object Security (JOSE), DNSSEC, S-MIME, CMS...
+* Constrained Object Security (COSE), JSON Object Security (JOSE), DNSSEC, S/MIME, CMS...
   * Secures Application Data (Web Objects...)
 * Object Security for Constrained RESTful Environments (OSCORE)
   * Secures Web Object communications (HTTP) 
   * Secures HTTP signaling while enabling HTTP-CoAP proxies 
 * Datagram Transport Layer Security (D)TLS
-  * Secures an application commmunications (Session)
+  * Secures an application communications (Session)
 * IP Security (IPsec)
   * Secures device communications (IP)
 
@@ -89,10 +89,10 @@ Example:
 * DNS(EC)
   * Origin-to-many security 	 
   * Data is cached in all resolvers
-  * Signed with the Private Key of the data onwer
+  * Signed with the Private Key of the data owner
   * Validated by DNS resolvers with the Public Key 
-  * A global chain of trust enables vaidation of the data.
-* Emails SMIME:
+  * A global chain of trust enables validation of the data.
+* Emails S/MIME:
   * End-to-end security
   * Can be delayed, take various transport mode. 
   * Encrypted with the destination Public Key (Confidentiality)
@@ -118,19 +118,19 @@ OSCORE characteristics:
   * Independent of the infrastructure
 * Secures exchanges over the path provided by the infrastructure
   * **Between Application Data and Transport Security**
-* Usually relies on symetric cryptography with shared keys:
+* Usually relies on symmetric cryptography with shared keys:
   * Used to authenticate and encrypt the exchanges
   * No proof of origin 
 ---
 
 # IoT Security Protocols - (D)TLS 
 
-Transport Security (D)TLS characteristcis:
+Transport Security (D)TLS characteristics:
 * Application-to-Service communication security
   * Motes identifiers handled by the application 
   * Independent of the infrastructure
 * User-to-Service communication security
-  * (D)TLS autenticates the communication to the service
+  * (D)TLS authenticates the communication to the service
   * User authentication is performed by the service
   * User (D)TLS termination point is usually not considered
 
@@ -144,7 +144,7 @@ Transport Security (D)TLS characteristcis:
   * Independent of the infrastructure
 * Secures exchanges over the path provided by the infrastructure
   * **Secures Application session (HTTP) above UDP/TCP**
-* Usually relies on symetric cryptography with shared keys:
+* Usually relies on symmetric cryptography with shared keys:
   * Used to authenticate and encrypt the exchanges
   * No proof of origin 
 ---
@@ -182,8 +182,8 @@ IPsec is envisioned for communications:
 * Within a specific security domain ( like your home network)
 * Between (many) devices belonging to that domain
   * Configured by a same admin
-  * Provisionned with a specific control plan $\neq$ IKEv2 
-* Involving constrainted battery powered devices
+  * Provisioned with a specific control plan $\neq$ IKEv2 
+* Involving constrained battery powered devices
   * ESP Header Compression (EHC) reduces payload overhead
 * Long term sessionless communications
 
@@ -204,7 +204,7 @@ IP/ESP/Data provides smaller payload over IP/UDP/DTLS/{HTTP, CoAP/OSCORE}
 
 # Use Cases - Mote
 
-Basic interactions and birectional communication may include:  
+Basic interactions and bidirectional communication may include:  
 * Communication using a control channel - eventually multicast 
 * Basic device-to-device communications (Ping - like) 
 
@@ -214,16 +214,16 @@ Basic interactions and birectional communication may include:
 
 # Use Cases - IPsec for Motes
 
-In this case, the main drivers for chosing IPsec could be:
+In this case, the main drivers for choosing IPsec could be:
 * Communications 
   * with a specific mote (IP) 
   * within a specific domain
   * Long term sessions
 * Device
   * Limited or simple interactions ($\neq$ RESTful application)
-  * Very constrainted 
+  * Very constrained 
     * Minimize the payload size
-    * Support alternate KEX or key provisionning
+    * Support alternate KEX or key provisioning
 * Management
   * mutlicast
   * Alternate key provisioning, KEX
@@ -232,11 +232,11 @@ In this case, the main drivers for chosing IPsec could be:
 
 # Use Cases - IPsec for Motes
 
-IPsec secures IP communicatiosn between Identities:
+IPsec secures IP communications between Identities:
 * SPI ( not IP addresses) identifies the communication
 * SPI is at the IP layer
 
-The other end point needs acces the SPI (IP layer):
+The other end point needs access the SPI (IP layer):
 * Does not fit communications between mote and Cloud
 
 Note: IPv6 provides lots of IP addresses
@@ -253,7 +253,7 @@ Note: IPv6 provides lots of IP addresses
 # Use Cases - Security Domain
 
 The Security Domain is defined by the Home Network:
-* Motes provide data to a Controller / Aggrehator using IPsec
+* Motes provide data to a Controller / Aggregator using IPsec
  * Mote origin is important
 * Health Care sensors extends the Security Domain 
 
@@ -267,7 +267,7 @@ Controller / Aggregators:
 ---
 # Use Cases - Security Domain
 
-Aggregators, controllers present the following adavantages:
+Aggregators, controllers present the following advantages:
 * Provides more control on the data exchanged with the Cloud
 * Enable to change Service, Cloud provider
 * Provides additional privacy 
@@ -377,7 +377,7 @@ IPv6 ESP VPN protecting an IPv6 UDP communication
 * Inner packet is IPv6 / UDP
 * Inner IPv6 ( UDP port) value may:
   * Be the specific negotiated SA Selectors
-  * Belong to a Range of engotiated SA Selectors 
+  * Belong to a Range of negotiated SA Selectors 
 
 ---
 # Implicit IV
@@ -481,8 +481,8 @@ EHC provides a framework to compress ESP protected payloads:
 
 EHC takes advantage of the SA agreement (configuration) to:
 * Prevent repeating fields already defined by the SA
-* Agree on ESP and inne rpacket compression rules
-* Prevent any compression signalling within the ESP packet.
+* Agree on ESP and inner packet compression rules
+* Prevent any compression signaling within the ESP packet.
 
 ---
 # EHC - Architecture
@@ -539,7 +539,7 @@ EHC Context and EHC Strategy :
 * Provides the sufficient parameters to (de)compress
 
 EHC does not rely on 
-* In-band signalling of the compression
+* In-band signaling of the compression
 * Learning, discovery phases - ROHC
 
 
@@ -594,9 +594,9 @@ EHC Rules compress:
 * The Inner IPv6 Packet fields
 * The ESP fields
 
-There is no one-to-one mapping between EHC_RULE and fields
-* One EHC_RULE may compress multiple fields
-* One field may be addressed by multiple EHC_RULES
+There is no one-to-one mapping between EHC Rule and fields
+* One EHC Rule may compress multiple fields
+* One field may be addressed by multiple EHC Rules
   * Selection is performed by the EHC Strategy
   
 ---
@@ -652,7 +652,7 @@ P|             length            |            checksum           |
 ---
 # EHC - Inner IPv6 Packet
 
-Inner IPv6 packet commpression:
+Inner IPv6 packet compression:
 * IPv6 compression only occurs with IPsec Tunnel mode
 * Occurs in the pre esp phase
 
@@ -681,7 +681,7 @@ EHC Context provides the following IPv6 header information:
 ---
 # EHC - Inner IPv6 Header - EHC Rules
 
-EHC_RULES defines inner IPv6 header (de)compression:
+EHC Rules defines inner IPv6 header (de)compression:
 
 
 | EHC Rule     | Field          | Action | Parameters |
@@ -723,7 +723,7 @@ EHC Context provides the following UDP information:
 ---
 # EHC - Inner UDP - EHC Rules
 
-EHC_RULES defines inner UDP (de)compression:
+EHC Rules defines inner UDP (de)compression:
 
 | EHC Rule   | Field        | Action   | Parameters |
 -------------|--------------|----------|-------------
@@ -781,7 +781,7 @@ EHC Context provides the following ESP information:
 ---
 # EHC - ESP - EHC Rules
 
-EHC_RULES defines inner ESP (de)compression:
+EHC Rules defines inner ESP (de)compression:
 
 
 | EHC Rule| Field             | Action  | Parameters                |
@@ -798,7 +798,7 @@ EHC_RULES defines inner ESP (de)compression:
 # EHC Strategy: Diet-ESP
 
 EHC Strategy defines the orchestration of the EHC Rules
-* EHC_RULES are not agreed individually between the peers 
+* EHC Rules are not agreed individually between the peers 
 * EHC Strategies are standardized
 * EHC Strategies are described with EHC Rules but can be implemented differently 
 
@@ -814,7 +814,7 @@ Diet-ESP results results from a compromise between:
 # EHC Strategy: Diet-ESP
 
 * Ease to configure:
-  * Selcting "OUTER" EHC Rules  
+  * Selecting "OUTER" EHC Rules  
   * Most commonly used parameters.
     * esp_sn_gen is set to "Incremental"
 * Use cases vs Compression efficiency:

@@ -86,7 +86,7 @@ Application Data Security characteristics:
 # IoT Security Protocols - Application Data
 
 Example:
-* DNS(EC)
+* DNSSEC
   * Origin-to-many security 	 
   * Data is cached in all resolvers
   * Signed with the Private Key of the data owner
@@ -127,7 +127,7 @@ OSCORE characteristics:
 
 Transport Security (D)TLS characteristics:
 * Application-to-Service communication security
-  * Motes identifiers handled by the application 
+  * Mote identifiers handled by the application 
   * Independent of the infrastructure
 * User-to-Service communication security
   * (D)TLS authenticates the communication to the service
@@ -140,7 +140,7 @@ Transport Security (D)TLS characteristics:
 
 (D)TLS characteristics:
 * Application-to-Service communication security
-  * Motes identifiers handled by the application 
+  * Mote identifiers handled by the application 
   * Independent of the infrastructure
 * Secures exchanges over the path provided by the infrastructure
   * **Secures Application session (HTTP) above UDP/TCP**
@@ -179,7 +179,7 @@ IPsec characteristics:
 # IoT Security - Security Protocols 
 
 IPsec is envisioned for communications:
-* Within a specific security domain ( like your home network)
+* Within a specific security domain (like your home network)
 * Between (many) devices belonging to that domain
   * Configured by a same admin
   * Provisioned with a specific control plan $\neq$ IKEv2 
@@ -195,9 +195,9 @@ A mote with unidirectional communication to a local destination:
 * Periodically sending information (temperature, door status) 
 * Receiving a simple signal (open the door)
 
-IP/ESP/Data provides smaller payload over IP/UDP/DTLS/{HTTP, CoAP/OSCORE}
+IP/ESP/Data provides smaller payloads over IP/UDP/DTLS/{HTTP, CoAP/OSCORE}
 
-<img src="https://github.com/mglt/lecture-ipsec-iot/blob/master/prez/fig/use_case_e2e-unidirectional.png" height="200">
+<img src="/home/emigdan/gitlab/ipsec-iot-lecture/prez/fig/use_case_e2e-unidirectional.png" height="200">
 
 ---
 
@@ -208,7 +208,7 @@ Basic interactions and bidirectional communication may include:
 * Communication using a control channel - eventually multicast 
 * Basic device-to-device communications (Ping - like) 
 
-<img src="https://github.com/mglt/lecture-ipsec-iot/blob/master/prez/fig/use_case_e2e-bidirectional.png" height="200">
+<img src="/home/emigdan/gitlab/ipsec-iot-lecture/prez/fig/use_case_e2e-bidirectional.png" height="200">
 
 ---
 
@@ -225,7 +225,7 @@ In this case, the main drivers for choosing IPsec could be:
     * Minimize the payload size
     * Support alternate KEX or key provisioning
 * Management
-  * mutlicast
+  * multicast
   * Alternate key provisioning, KEX
 
 ---
@@ -233,7 +233,7 @@ In this case, the main drivers for choosing IPsec could be:
 # Use Cases - IPsec for Motes
 
 IPsec secures IP communications between Identities:
-* SPI ( not IP addresses) identifies the communication
+* SPI (not IP addresses) identifies the communication
 * SPI is at the IP layer
 
 The other end point needs access the SPI (IP layer):
@@ -246,7 +246,7 @@ Note: IPv6 provides lots of IP addresses
 
 # Use Cases - Security Domain
 
-<img src="https://github.com/mglt/lecture-ipsec-iot/blob/master/prez/fig/secure-domain-architecture-ipsec.svg" height="500">
+<img src="/home/emigdan/gitlab/ipsec-iot-lecture/prez/fig/secure-domain-architecture-ipsec.svg" height="500">
 
 
 ---
@@ -375,7 +375,7 @@ Standard IPv6 VPN ESP packet (AES-CCM 8 bytes IV):
 IPv6 ESP VPN protecting an IPv6 UDP communication
 * ipsec_mode is set to "Tunnel"
 * Inner packet is IPv6 / UDP
-* Inner IPv6 ( UDP port) value may:
+* Inner IPv6 (UDP port) value may:
   * Be the specific negotiated SA Selectors
   * Belong to a Range of negotiated SA Selectors 
 
@@ -1115,14 +1115,14 @@ Diet-ESP cuts the bill:
 # EHC Strategy: Diet-ESP - Performance
 
 
-<img src="https://github.com/mglt/lecture-ipsec-iot/blob/master/prez/fig/results_energy_vs_payload.png  " height="500">
+<img src="/home/emigdan/gitlab/ipsec-iot-lecture/prez/fig/results_energy_vs_payload.png  " height="500">
 
 
 ---
 # EHC Strategy: Diet-ESP - Performance
 
 
-<img src="https://github.com/mglt/lecture-ipsec-iot/blob/master/prez/fig/results_energy_vs_payload_relative.png" height="500">
+<img src="/home/emigdan/gitlab/ipsec-iot-lecture/prez/fig/results_energy_vs_payload_relative.png" height="500">
 
 ---
 # EHC Strategy: Diet-ESP - IKEv2 
